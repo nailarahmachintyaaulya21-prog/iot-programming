@@ -1,0 +1,107 @@
+{
+  "version": 1,
+  "author": "Praktikum IoT",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-esp32-devkit-v1",
+      "id": "esp",
+      "top": -81.7,
+      "left": -283.4,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": -70.8,
+      "left": 119,
+      "attrs": {
+        "color": "red"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 3.95,
+      "left": 28.8,
+      "attrs": {
+        "value": "220"
+      }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": 63.8,
+      "left": 86.4,
+      "attrs": {
+        "color": "green"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": 176.75,
+      "left": 172.8,
+      "attrs": {
+        "value": "10000"
+      }
+    }
+  ],
+  "connections": [
+    [
+      "esp:D5",
+      "r1:1",
+      "green",
+      []
+    ],
+    [
+      "r1:2",
+      "led1:A",
+      "green",
+      []
+    ],
+    [
+      "led1:C",
+      "esp:GND.1",
+      "black",
+      []
+    ],
+    [
+      "esp:3V3",
+      "btn1:1.l",
+      "red",
+      []
+    ],
+    [
+      "btn1:2.l",
+      "esp:D4",
+      "green",
+      []
+    ],
+    [
+      "esp:D4",
+      "r2:1",
+      "green",
+      []
+    ],
+    [
+      "r2:2",
+      "esp:GND.1",
+      "black",
+      []
+    ],
+    [
+      "esp:TX0",
+      "$serialMonitor:RX",
+      "",
+      []
+    ],
+    [
+      "esp:RX0",
+      "$serialMonitor:TX",
+      "",
+      []
+    ]
+  ],
+  "dependencies": {}
+}
